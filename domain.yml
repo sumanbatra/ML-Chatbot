@@ -1,0 +1,56 @@
+session_config:
+  session_expiration_time: 600
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- operation
+- machine_learning
+entities:
+- task
+- data
+- column_name
+slots:
+  column_name:
+    type: unfeaturized
+  data:
+    type: unfeaturized
+  task:
+    type: text
+responses:
+  utter_ask_data:
+  - text: Ok. Can you a provide the link to the dataset?
+  utter_ask_column_name:
+  - text: Ok. Please provide the name of the target column?
+  utter_greet:
+  - text: Hi! how can I help you?
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_affirm:
+  - text: Yes, sure
+  utter_ask_for_dataset:
+  - text: Can you a provide the link to the dataset?
+  utter_doing_task:
+  - text: Performing {task} on the dataset {data} provided with column
+      name {column_name}.
+  utter_anything_else:
+  - text: Would you like me to do anything else?
+  utter_goodbye:
+  - text: Bye! and thanks for using AutoML bot.
+  utter_task_list:
+  - text: I can perform Classification, Regression, and Deep Learning on a dataset,
+      what would you like me to do?
+actions:
+- utter_greet
+- action_hello_world
+- utter_did_that_help
+- utter_affirm
+- utter_ask_for_dataset
+- utter_doing_task
+- utter_anything_else
+- utter_goodbye
+- utter_task_list
+forms:
+- form_info
